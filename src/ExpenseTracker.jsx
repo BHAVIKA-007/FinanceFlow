@@ -1,5 +1,11 @@
 import './ExpenseTracker.css';
 import React, {useState} from 'react';
+import SummaryCards from './components/SummaryCards';
+import CategoryPieChart from './components/PieChart';
+import ExpensesOverTime from './components/LineChart';
+import RoleToggle from './components/RoleToggle';
+import './components/SummaryCards.css';
+import './components/RoleToggle.css';
 
 function ExpenseTracker(props){
 const [expense, setExpense] = useState({
@@ -16,6 +22,9 @@ const [expenseList, setExpenseList] = useState([]);
 const categories=["food","education","travel","entertainment","other"];
 const [totalexp,settotalexp]=useState(0);
 const [spendingtoday,setspendingtoday]=useState(0);
+const [role, setRole] = useState('Admin');
+
+const toggleRole = () => setRole(role === 'Admin' ? 'Viewer' : 'Admin');
 
 function updateAmount(e){
   setExpense({ ...expense, Amount: Number(e.target.value) })
@@ -44,9 +53,7 @@ setExpense({ ...expense,Description:e.target.value})
       Amount: 0,
       Category: '',
       Description: '',
-      Date: new Date().toLocaleDateString()
-      //Converts the date into a localized date string, based on the user's browser language and region.
-      //In India (en-IN): "25/6/2025" and In US (en-US): "6/25/2025"
+      Date: new Date().toISOString().split('T')[0]
     });
   }
 
@@ -58,6 +65,8 @@ return(
         Welcome! Budget: ₹{props.userSetup.budget} | Goal: {props.userSetup.goal}
       </div>
     </div>
+    <RoleToggle role={role} onToggle={toggleRole} />
+    <SummaryCards income={props.userSetup.income} totalExpenses={totalexp} budget={props.userSetup.budget} />
     
     <div className="summary">
       <h3>Summary</h3>
@@ -118,10 +127,13 @@ return(
         </div>
       </div>
       
-      <button type="submit" className="submit-btn" onClick={(e)=>updateExpense(e)}>
+      <button type="submit" className="submit-btn" onClick={(e)=>updateExpense(e)} disabled={role === 'Viewer'}>
         Add Expense
       </button>
     </form>
+
+    <CategoryPieChart expenseList={expenseList} />
+    <ExpensesOverTime expenseList={expenseList} />
 
     <div className="expense-history">
       <h3>Expense History</h3>

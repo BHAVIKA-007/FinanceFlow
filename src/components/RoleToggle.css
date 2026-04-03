@@ -1,0 +1,25 @@
+.role-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+.role-toggle label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #166534;
+  font-weight: 500;
+}
+
+.role-toggle input {
+  margin-right: 8px;
+  accent-color: #16a34a;
+}
+
+.role-toggle span {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #14532d;
+}

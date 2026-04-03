@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SetupForm from './SetupForm';
-import ExpenseTracker from './ExpenseTracker';
+import SetupForm from './components/SetupForm';
+import ExpenseTracker from './components/ExpenseTracker';
 
 function App() {
   const [userSetup, setUserSetup] = useState(null);//data will be collected here ,intially null

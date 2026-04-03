@@ -6,15 +6,15 @@
   margin: 0 auto;
   padding: 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8fafc; /* same as expense tracker */
+  background-color: #f0fdf4;
   min-height: 100vh;
-  color: #334155;
+  color: #14532d;
 }
 
 /* Header with exact gradient from ExpenseTracker */
 #setup h2 {
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -31,7 +31,7 @@
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
+  border: 1px solid #bbf7d0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -41,26 +41,26 @@
 #form input[type="number"],
 #form select {
   padding: 12px 16px;
-  border: 2px solid #e0e7ff;
+  border: 2px solid #bbf7d0;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #eff6ff; /* light blue input */
+  background-color: #f0fdf4;
   transition: all 0.3s ease;
 }
 
 #form input[type="number"]:focus,
 #form select:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
 }
 
 /* Goal section */
 .goals-section {
-  background: #f0f9ff;
+  background: #f0fdf4;
   border-radius: 12px;
   padding: 20px;
-  border: 1px solid #bae6fd;
+  border: 1px solid #bbf7d0;
 }
 
 .goals-title {
@@ -80,19 +80,19 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #e0f2fe;
+  background: #dcfce7;
   padding: 10px 15px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.95rem;
-  color: #1e40af;
+  color: #166534;
   font-weight: 500;
-  border: 1px solid #c7d2fe;
+  border: 1px solid #bbf7d0;
   transition: background 0.3s ease;
 }
 
 .goal:hover {
-  background: #dbeafe;
+  background: #bbf7d0;
 }
 
 /* Button styling */
